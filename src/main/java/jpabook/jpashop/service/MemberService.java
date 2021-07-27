@@ -3,6 +3,7 @@ package jpabook.jpashop.service;
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,7 +18,7 @@ import java.util.List;
  * readonly 옵션을 true로 주게되면 읽기를 할 때 성능을 최적화 해옵니다.
  */
 //@RequiredArgsConstructor => final필드만 골라서 의존성 주입
-
+@Slf4j
 public class MemberService {
     private final MemberRepository memberRepository;
 
@@ -29,7 +30,9 @@ public class MemberService {
     // 회원 가입
     public Long join(Member member){
         validateDuplicateMember(member);
+        log.info("성공2");
         memberRepository.save(member);
+        log.info("성공3");
         return member.getId();
     }
 

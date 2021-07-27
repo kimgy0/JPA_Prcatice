@@ -1,6 +1,7 @@
 package jpabook.jpashop.repository;
 
 import jpabook.jpashop.domain.Member;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -8,6 +9,7 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
+@Slf4j
 public class MemberRepository {
 
     // @PersistenceUnnit => 은 emf를 주입받을 수 있는 어노테이션.
@@ -15,7 +17,9 @@ public class MemberRepository {
     private EntityManager em;
 
     public void save(Member member){
+        log.info("성공4");
         em.persist(member);
+        log.info("성공5");
     }
 
     public Member findOne(Long id){

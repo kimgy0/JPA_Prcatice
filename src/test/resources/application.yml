@@ -1,20 +1,20 @@
-# resources 폴더를 직접 만들어서 yml을 복붙하면 이 yml이 테스트케이스에서는 우선순위를 가짐.
-spring:
-  datasource:
-    url: jdbc:h2:mem:test
-    # h2홈페이지에 가보면 있음 cheet
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
-
-
-  jpa:
-    hibernate:
-      ddl-auto: create-drop # 스프링 부트는 기본적으로 creat - drop
-    properties:
-      hibernate:
-        # show_sql: true 이거는 좀 println같은 구조로 조정.
-        format_sql: true
+## resources 폴더를 직접 만들어서 yml을 복붙하면 이 yml이 테스트케이스에서는 우선순위를 가짐.
+#spring:
+#  datasource:
+#    url: jdbc:h2:mem:test
+#    # h2홈페이지에 가보면 있음 cheet
+#    username:
+#    password:
+#    driver-class-name: org.h2.Driver
+#
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: create-drop # 스프링 부트는 기본적으로 creat - drop
+#    properties:
+#      hibernate:
+#        # show_sql: true 이거는 좀 println같은 구조로 조정.
+#        format_sql: true
 
 logging:
   level:
