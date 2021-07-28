@@ -28,6 +28,7 @@ public class MemberService {
     }
 
     // 회원 가입
+    @Transactional
     public Long join(Member member){
         validateDuplicateMember(member);
         log.info("성공2");
@@ -50,5 +51,13 @@ public class MemberService {
 
     public Member findOne(Long memberId){
         return memberRepository.findOne(memberId);
+    }
+
+    @Transactional
+    public void update(Long id, String name) {
+        Member member = memberRepository.findOne(id);
+        member.setName(name);
+        //업데이트할 땐 변경감지를 꼭사용해라!
+        //merge 는 null 값문제 때문에 다 대체하기 떄문에 안된다!
     }
 }

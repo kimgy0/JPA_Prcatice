@@ -26,6 +26,14 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.7.1'
 
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5'
+//	하이버네이트 5 모듈 다운로드
+//	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5'
+//	왜냐 ? 전체 주문정보를 다불러오면 order클래스에 붙어있던 xtoOne의 아이들이 프록시객체로 지연로딩하는데
+//	스프링은 그 프록시객체를 처리할 줄 모른다. 그래서 무한루프생기면서 무한 트레이스가 보이게되는거
+//	그러다보니까 스프링은 자꾸 트레이스걸면서 패킷도 정상적으로 못받음
+//	결론은 프록시가 문제
+
 	implementation 'junit:junit:4.12'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
