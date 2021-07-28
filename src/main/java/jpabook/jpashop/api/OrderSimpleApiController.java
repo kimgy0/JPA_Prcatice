@@ -147,7 +147,7 @@ public class OrderSimpleApiController {
          *                         "from Order o " +
          *                         "join o.member m " +
          *                         "join o.delivery d"
-         *                 , SimpleOrderQueryDto.class)
+         *                 , SimpleOrderQueryDto.class )
          *                 .getResultList();
          *         return resultList;
          */
