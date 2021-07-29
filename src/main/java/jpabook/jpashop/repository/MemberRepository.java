@@ -17,9 +17,7 @@ public class MemberRepository {
     private EntityManager em;
 
     public void save(Member member){
-        log.info("성공4");
         em.persist(member);
-        log.info("성공5");
     }
 
     public Member findOne(Long id){

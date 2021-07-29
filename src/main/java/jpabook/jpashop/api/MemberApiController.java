@@ -133,12 +133,12 @@ public class MemberApiController {
             this.id = id;
         }
     }
-
+    //--------------------------------------------------------------------------------------------------------------
     @Data
     static class CreateMemberRequest {
         private String name;
     }
-//--------------------------------------------------------
+    //--------------------------------------------------------
     @Data
     static class UpdateMemberRequest {
         @NotEmpty
